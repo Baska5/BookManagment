@@ -1,0 +1,1173 @@
+UNIT 2
+1. Which of the following statements is true about campus networks?
+a. The campus network describes the interconnections of servers in a data center.
+b. The campus network describes the WAN interconnectivity between two remote sites and head office.
+c. The campus network describes the network devices that interconnect end users to applications such as e-mail, the intranet, or the Internet over wire or wireless connections. +
+
+2. Which of the following is a disadvantage to using flat Layer 2 networks?
+a. Broadcast packets are flooded to every device in the network.
+b. No IP boundary to administer IP-based access control.
+c. A host flooding traffic onto the network effects every device.
+d. Scalability is limited.
+e. All the above +
+
+3. Why are networks designed with layers?
+a. Allows focus within specific layers due to grouping, segmentation, and compartmentalization
+b. Simplification of network design
+c. Optimizes use of physical interconnects (links)
+d. Optimizes application of policies and access control
+e. Eases network management
+f. All of the above +
+
+4. Identify the three layers of the hierarchical model for designing networks.
+a. Core +
+b. Access +
+c. Distribution +
+d. Enterprise edge
+e. WAN
+f. Wireless
+
+5. What is another common name for the core layer?
+a. Backbone +
+b. Campus
+c. Data center
+d. Routing layer
+
+6. In newer terminology, what layers are referred to as the spine layer and the leaf layer?
+a. The spine layer is the equivalent to the core layer, and the leaf layer is equivalent to the
+distribution layer.
+b. The spine layer is equivalent to the access layer, and the leaf layer is equivalent to the
+distribution layer.
+c. The spine layer is equivalent to the distribution layer, and the leaf layer is equivalent to the
+access layer.
+d. The spine layer is equivalent to the core layer, and the leaf layer is equivalent to the access layer +
+
+7. Match each layer to its definition.
+a. Core
+b. Distribution
+c. Access
+1. Connects PCs, wireless access points, and IP phones
+2. High-speed interconnectivity layer that generally supports routing capability
+3. Aggregates access layer switches and provides for policy control
+
+a-2
+b-3
+c-1
+
+
+8. Which of the following are generally true about recommended core layer designs?
+a. Requires high-availability and resiliency +
+b. Connects critical application servers directly for optimal latency and bandwidth
+c. Leverages fixed form factor switches in large enterprises
+
+9. In which layer are you most likely to find fixed Catalyst switches?
+a. Access layer +
+b. Core layer
+c. Distribution layer
+
+10. In which layer are you most likely to find modular Catalyst switches?
+a. Access layer
+b. Backbone layer
+c. Core layer +
+
+11. Which of the following are benefits to using Layer 3 in the access layer? (Choose two.)
+a. Reduced cost
+b. Reduced Layer 2 domain +
+c. Reduced spanning-tree domain +
+d. Mobility
+
+12. Which of the following is the biggest disadvantage with using Layer 3 in the access layer using current technologies?
+a. More difficult troubleshooting +
+b. Lack of broadcast forwarding
+c. Native mobility without additional features
+d. Lack of high availability
+
+13. A Layer 2-only switch makes forwarding decisions based on what?
+a. Source MAC address
+b. Destination MAC address +
+c. Source IP address
+d. Destination IP address
+
+14. What does a switch do when it does not know how to forward a frame?
+a. Drops the frame
+b. Floods the frames on all ports in the same Layer 2 domain except the source port +
+c. Stores the frame for later transmission
+d. Resends the frame out the port where it was received
+
+15. The Layer 2 forwarding table of Cisco switches is also referred to as which of the following?
+a. CAM table +
+b. Routing table
+c. MAC address table
+d. FIB table
+
+16. Which of the following lookups does a Layer 2-only Cisco Catalyst switch perform on an ingress frame?
+a. Layer 2 forwarding for destination port +
+b. ACL for access control
+c. NetFlow for statistics monitoring
+d. QoS for classification, marking, or policing
+
+17. Which of the following are true about CAM and/or TCAM? (Choose three.)
+a. TCAM stands for ternary content-addressable memory. +
+b. CAM provides three results: 0, 1, and don’t care.
+c. Leveraging CAM and TCAM ensures line-rate performance of the switch. +
+d. CAM and TCAM are software-based tables.
+e. TCAM is leveraged by QoS and ACL tables.+
+
+18. Why is TCAM necessary for IP routing tables over CAM?
+a. TCAM supports longest matching instead of match or not match.+
+b. TCAM is faster than CAM.
+c. TCAM memory is cheaper than CAM
+
+19. Cisco Catalyst switches leverage which of the following technologies for Layer 3 forwarding?
+a. Route caching
+b. Processor/CPU switching
+c. NetFlow
+d. CEF +
+
+20. Cisco Catalyst switches relay routing information to hardware components for additional
+performance and scalability (line-rate forwarding). What are the two common hardware types that receive relayed routing information?
+a. Centralized +
+b. Distributed +
+c. Aggregated
+d. Core-based
+
+21. With regard to load balancing, what term describes the situation where less than optimal use of all links occurs?
+a. Reverse path forwarding (RPF)
+b. Polarization +
+c. Inverse routing
+d. Unicast flooding
+
+22. What is the default load-balancing mechanism found on Cisco Catalyst switches?
+a. Per-flow
+b. Per-destination IP address +
+c. Per-packet
+d. Per-destination MAC address
+
+
+UNIT 3 
+1. True or False: It is important to have the same native VLAN on both switch link partners for ISL trunking. 
+TRUE
+FALSE +
+
+2. True or False: The Cisco Catalyst 6500 supports up to 1024 VLANs in the most recent software releases. 
+TRUE
+FALSE +
+
+3. True or False: When removing the native VLAN from a trunk port, CDP, PAgP, and DTP, use the lowest-numbered VLAN to send traffic. 
+TRUE
+FALSE +
+
+4. True or False: In VTP client mode, switches can add and delete VLANs. 
+TRUE
+FALSE +
+
+5. True or False: Token Ring support is available in VTP Version 1. 
+TRUE
+FALSE +
+
+Catalyst6500-IOS# show run interface gigabitEthernet 3/9
+Building configuration...
+Current configuration : 137 bytes !
+interface GigabitEthernet3/9
+mtu 9216
+no ip address
+switchport
+switchport access vlan 5
+switchport trunk encapsulation dot1q
+end
+6. If the interface in Example 3-14 negotiates trunking, what would be the native VLAN?
+a. VLAN 1 +
+b. VLAN 5
+c. VLAN 9216
+d. No native VLAN if the port negotiated trunking
+
+7. Under what condition can the interface in Example 3-14 negotiate ISL trunking?
+a. If the port is a member of an EtherChannel.
+b. If the link partner defaults to ISL trunking for negotiated ports.
+c. If the link partner is configured for trunking in the on mode.
+d. The interface cannot negotiate trunking because it is configured statically for 802.1Q trunking. +
+
+8. Which statement is true for the configuration of the interface in Example 3-14?
+a. The interface is a member of VLAN 5 and may negotiate to a trunk port.+
+b. The interface may negotiate to an ISL trunk with a native VLAN of 5.
+c. The interface may negotiate to an 802.1Q trunk and operate with a native VLAN of 1.+
+d. The interface will not negotiate to a trunk port because it is configured in access VLAN 5.
+e. If a host workstation is connected to the interface, it must be configured for trunking.
+
+svs-san-6509-2# show interfaces gigabitEthernet 3/9 switchport
+Name: Gi3/9
+Switchport: Enabled
+Administrative Mode: dynamic auto
+Operational Mode: down
+Administrative Trunking Encapsulation: dot1q
+Negotiation of Trunking: On
+Access Mode VLAN: 1 (default)
+Trunking Native Mode VLAN: 2 (VLAN0002)
+Voice VLAN: none
+Administrative private-vlan host-association: none
+Administrative private-vlan mapping: none
+Operational private-vlan: none
+Trunking VLANs Enabled: ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+9. What is the trunk native VLAN based on in Example 3-15?
+a. VLAN 1
+b. VLAN 2 +
+c. VLAN 5
+d. No Native VLAN if the port negotiated trunking
+
+10. Based on Example 3-15, what statement is true if the link partner (peer switch) is configured for the dynamic trunking mode?
+a. The interface cannot negotiate to a trunk port because it is configured for dot1Q encapsulation.
+b. The interface cannot negotiate to a trunk port because the native VLAN and access VLANs
+are mismatched.
+c. The interface can negotiate to a trunk port if the peer is configured for the dynamic desirable trunking mode.+
+d. The interface can negotiate to a trunk port if access VLAN is the same on both sides.
+
+11. What is the interface’s access mode VLAN in Example 3-15?
+a. VLAN 1 +
+b. VLAN 2
+c. VLAN 5
+d. VLAN 1001
+
+12. How does implementing VLANs help improve the overall performance of the network?
+a. By isolating problem employees
+b. By constraining broadcast traffic +
+c. By grouping switch ports into logical communities
+d. By forcing the Layer 3 routing process to occur between VLANs
+
+13. What are the advantages of using local VLANs over end-to-end VLANs? (Choose two.)
+a. Eases management +
+b. Eliminates the need for Layer 3 devices
+c. Allows for a more deterministic network +
+d. Groups users by logical commonality
+e. Keeps users and resources on the same VLAN
+
+14. Which prompt indicates that you are in VLAN configuration mode of Cisco IOS?
+a. Switch#
+b. Switch(vlan)#
+c. Switch(config)#
+d. Switch(config-vlan)# +
+
+15. Which switch port mode unconditionally sets the switch port to access mode regardless of any other DTP configurations?
+a. Access +
+b. Nonegotiate
+c. Dynamic auto
+d. Dynamic desirable
+
+16. What information is contained in the FCS of an ISL-encapsulated frame?
+a. CRC calculation +
+b. Header encapsulation
+c. ASIC implementation
+d. Protocol independence
+
+17. 802.1Q uses an internal tagging mechanism, where a tag is inserted after the _____ field.
+a. Type
+b. SA +
+c. Data
+d. CRC
+
+18. Which command correctly configures a port with ISL encapsulation in Cisco IOS?
+a. Switch(config-if)# switchport mode trunk isl
+b. Switch(config-if)# switchport mode encapsulation isl
+c. Switch(config-if)# switchport trunk encapsulation isl +
+d. Switch(config-if)# switchport mode trunk encapsulation isl
+
+19. Which command correctly sets the native VLAN to VLAN 5?
+a. switchport native vlan 5
+b. switchport trunk native 5
+c. switchport native trunk vlan 5
+d. switchport trunk native vlan 5 +
+
+20. If the Layer 2 interface mode on one link partner is set to dynamic auto, a trunk will be established if the link partner is configured for which types of interface modes in Cisco IOS? (Choose two.)
+a. Trunk +
+b. Access
+c. Nonegotiate
+d. Dynamic auto
+e. Dynamic desirable +
+
+21. What is the default VTP mode for a Catalyst switch?
+a. Client
+b. Access
+c. Server +
+d. Transparent
+
+22. When is a consistency check performed with VTP Version 2?
+a. When information is read from NVRAM
+b. When the digest on a received VTP message is correct
+c. When new information is obtained from a VTP message
+d. When you enter new information through the CLI or SNMP +
+
+23. Which command correctly sets the VTP version to version 1 in Cisco IOS global configuration
+mode?
+a. vtp v1-mode
+b. vtp v2-mode
+c. no vtp version
+d. no vtp version 2 +
+
+24. Which of the following are valid VTP Version 1 and 2 modes? (Choose all that apply.)
+a. Primary server mode
+b. Server mode +
+c. Client mode +
+d. Transparent mode +
+
+25. After you complete the VTP configuration, which command should you use to verify your
+configuration?
+a. show vtp status +
+b. show vtp counters
+c. show vtp statistics
+d. show vtp status counters
+
+26. What command might correct a problem with incorrect VTP passwords?
+a. password vtp 0
+b. clear vtp password
+c. clear password vtp
+d. vtp password password_string +
+
+27. True or False: The EtherChannel would come up if one side of the EtherChannel mode is set to auto and the other to on. 
+TRUE
+FALSE +
+
+28. Which of the following solutions are provided by EtherChannel? (Choose two.)
+a. Provide redundancy +
+b. Help to overcome bandwidth limitation +
+c. Because of EtherChannel, can transmit more than one VLAN over the links between switches
+d. Can limit the broadcast to the localswitches
+
+29. Which statement identifies network benefits provided by VLANs?
+a. VLANs allow you to group stations without regard to the physical location of the users. +
+b. VLANs help to isolate problem employees.
+c. VLANs reduce the impact of network problems. +
+d. VLANs can transmit frames to all ports in all VLANs.
+
+30. Match each command to its explanation.
+a. Switch(config-if)# switchport voice vlan vlan-id
+b. Switch(config-if)# switchport mode access
+c. Switch(config-if)# switchport access vlan vlan-id
+d. Switch(config-if)# switchport trunk native vlan vlan-id
+e. Switch(config-if)# switchport trunk allowed vlan add vlan-id
+f. Switch(config-if)# switchport mode trunk
+1. Configures the port to be assigned only to a single VLAN
+2. Configures the port to be assigned to multiple VLANs
+3. Configures a VLAN to be added to trunk port
+4. Configures a native VLAN for the trunk
+5. Configures a port to be a part of voice VLAN
+6. Configures a port to be a part of data VLAN
+
+a-5
+b-1
+c-6
+d-4
+e-3
+f-2
+
+
+31. How can you reset VTP revision number on a switch? (Choose two.)
+a. Set the switch to transparent mode and then to server mode.
+b. Set the switch to client mode and then to server mode.
+c. Change the VTP domain name to a nonexistent VTP domain and then back to the original name.
+d. Reload the switch.
+
+32. Which statement about transparent VTP mode is true?
+a. Creates, modifies, and deletes VLANs on allswitches in VTP domain +
+b. Creates, modifies, and deletes local VLANs only
+c. Does not forward advertisements to other switches in VTP domain +
+d. Synchronizes VLAN configurations from other switches in VTP domain
+
+33. What is the correct command for configuring load balancing on an EtherChannel link?
+a. Switch(config)# channel-group number load-balance method
+b. Switch(config-if)# channel-group number load-balance method
+c. Switch(config-if)# port-channel number load-balance method
+d. Switch(config)# port-channel load-balance method +
+
+34. Which of the following EtherChannel modes does not send or receive any negotiation frames?
+a. Passive
+b. Active
+c. On +
+d. Desirable auto
+
+
+
+
+
+
+
+
+
+
+
+UNIT 4
+1. Which command enables RSTP on a switch?
+a. spanning-tree mode rapid-pvst +
+b. no spanning-tree mode pvst
+c. spanning tree mode rstp
+d. rapid spanning-tree enable
+
+2. When a switch running RSTP receives an 802.1D BPDU, what happens?
+a. The switch disables RSTP.
+b. The switch begins to use 802.1D rules on that port. +
+c. BPDU is discarded.
+d. 802.1D BPDU is translated into 802.1w BPDU and processed.
+
+3. Which of the following is an STP port state but not an RSTP port state?
+a. Forwarding
+b. Learning
+c. Listening +
+d. Discarding
+
+4. Why is it important to protect the placement of the root bridge?
+a. To prevent Layer 2 loops
+b. To keep Layer 2 topology predictable in such a way that traffic flows are always efficient +
+c. To prevent from two switches to become root bridges
+d. To prevent Layer 3 loops
+
+5. Can PortFast be configured on a trunk link?
+a. No, PortFast is disabled by the command switchport mode trunk.
+b. Yes, enabling PortFast globally applies PortFast to all ports, including trunks.
+c. Yes, it can be configured on a port-to-port basis, but with caution, because loops may occur. +
+d. No, the portfast keyword is available only with the switchport mode access command.
+
+6. Which two statements are true of Loop Guard?
+a. It allows a blocked port in a physically redundant topology to stop receiving BPDUs.
+b. It provides additional protection against Layer 2 STP loops. +
+c. It moves ports into the STP loop-inconsistent state, if BPDUs are not received on a
+nondesignated port. +
+d. It enables the blocking port to move to the forwarding state
+
+7. Which standard describes Multiple Spanning Tree protocol?
+a. 802.1s +
+b. 802.1D
+c. 802.1w
+d. 802.1Q
+
+8. Which two features apply to MST?
+a. It groups a set of instances to a single VLAN.
+b. It can group a set of VLANs to a single spanning-tree instance. +
+c. A failure in one instance can cause a failure in another instance.
+d. The total number of spanning-tree instances should match the number of redundant switch paths. +
+
+9. How are VLANs mapped to instances by default with MST?
+a. All VLANs are mapped to MST instance 0. +
+b. All VLANs are mapped to MST instance 1.
+c. Each VLAN is mapped to its own instance.
+d. All VLANs are unmapped.
+
+
+UNIT 5
+1. True or False: An SVI is a physical Layer 3 interface, whereas a routed port is a virtual Layer 3 interface. 
+TRUE
+FALSE +
+
+2. True or False: Multilayer switches generally outperform routers of multiple Ethernet interfaces. 
+TRUE +
+FALSE
+
+3. True or False: A router can forward DHCP requests across VLAN or IP subnet boundaries by using the DHCP relay agent feature. 
+TRUE +
+FALSE
+
+switch# show run interface vlan 10
+Building configuration...
+Current configuration : 60 bytes ! interface Vlan10
+ip address 10.1.1.1 255.255.255.0
+no ip proxy-arp end
+switch# show run int vlan 20
+Building configuration...
+Current configuration : 60 bytes ! interface Vlan20
+ip address 10.2.1.1 255.255.255.0 no ip proxy-arp end
+
+4. Based on Example 5-5, can the hosts that reside in VLAN 20 communicate with hosts on VLAN
+10 if their default gateway is set to 10.2.1.1?
+a. Yes, if the hosts on VLAN 10 have their default gateway set to 10.1.1.1. +
+b. No, the default gateway of the hosts that reside in VLAN 20 should be set to 10.1.1.1.
+c. Yes, but there is no need to define default gateways.
+d. No, because the routing protocol or static routes are not defined.
+
+5. Based on Example 5-5, if the hosts that reside on VLAN 10 have their default gateway defined as 10.1.1.1 and ICMP can ping 10.2.1.1 but not a host that resides in VLAN 20, what could be a possible reason?
+a. Hosts on VLAN 10 are not configured with the correct default gateway.
+b. Hosts on VLAN 20 are not configured with the correct default gateway. +
+c. The routing protocol or static routes are not defined on the Layer 3 switch.
+d. VLAN 20 is not defined in the switch database.
+
+6. When performing router-on-a-stick inter-VLAN routing, a router interface is subdivided into what?
+a. VLAN subinterfaces
+b. 802.1Q subinterfaces
+c. Layer 3 subinterfaces +
+d. EtherChannelsubinterfaces
+
+7. Which two commands should be used to configure a router and switch to identify VLAN 10 as the native VLAN on an 802.1Q trunk link? (Choose two.)
+a. encapsulation dot1q vlan 10 native
+b. encapsulation dot1q 10 native +
+c. encapsulation dot1q native vlan 10
+d. switchport trunk dot1q native vlan 10
+e. switchport mode trunk dot1q vlan 10 native
+f. switchport trunk native vlan 10 +
+
+8. Place the following five items in the proper order of processing.
+a. If necessary, an input router ACL check is performed.
+b. The Layer 2 and Layer 3 header are rewritten.
+c. The Layer 2 forwarding engine forwards the frame.
+d. The Layer 2 engine performs the input VLAN ACL lookup.
+e. The destination IP address is compared against the Layer 3 forwarding table for the longest match.
+
+d a e b c
+
+9. Which of the following are not reasons for configuring an SVI? (Choose two.)
+a. To provide fallback bridging if it is required for nonroutable protocols
+b. To provide Layer 3 IP connectivity to the switch
+c. To provide failover if the primary SVI for a VLAN fails +
+d. To provide a gateway for a VLAN so that traffic can be routed into or out of that VLAN
+e. To provide connectivity to an external router for inter-VLAN routing +
+
+10. On which of the following ports would a network engineer be most likely to use the autostate exclude command?
+a. An 802.1Q trunk port connected to an external router
+b. A monitoring port connected to an intrusion prevention sensor +
+c. The secondary SVI for a VLAN
+d. A routed interface on a multilayer switch
+e. All of these answers are correct
+
+11. When must the command ip routing be used when configuring SVIs on a multilayer switch?
+a. When an SVI is being used to provide IP connectivity to the switch itself for a given VLAN.
+b. When the SVI is being configured as part of a Layer 2 EtherChannel bundle.
+c. When EIGRP is not being used as a routing protocol.
+d. When an SVI is being used to provide Layer 3 IP forwarding services to its assigned VLAN. +
+e. Never; IP routing is enabled by default on a multilayer switch.
+
+12. How is a port on a multilayer switch configured as a routed port?
+a. By configuring an IP address and subnet mask on the port
+b. By using the command switchport mode routed
+c. By removing the Layer 2 switching capability of the switch port
+d. By using the command no switchport mode +
+
+13. What command is used on Cisco IOS switches to change the interface from a Layer 3 interface to
+a Layer 2 interface?
+a. switchport mode access
+b. ip routing
+c. switchport +
+d. switchport mode trunk
+
+14. Which Cisco IOS command enables IP routing on a Catalyst switch?
+a. ip routing +
+b. interface vlan-id
+c. ip address n.n.n.n mask
+d. router ip-routing-protocol
+
+16. Which of the following UDP protocols are forwarded in addition to DHCP when a Layer 3
+interface is configured with the ip helper-address command? (Choose all that apply.)
+a. Mobile IP +
+b. DNS +
+c. Time +
+d. FTP
+
+17. Which of the following arrangements can be considered “router-on-a-stick”?
+a. One switch, two VLANs, one connection to a router. +
+b. One switch, two VLANs, two connections to a router.
+c. Two switches, two VLANs, two connections to a router.
+d. All of these answers are correct.
+
+18. Which two statements are typical characteristics of VLAN arrangements? (Choose two.)
+a. A new switch has no VLANs configured.
+b. Connectivity between VLANs requires a Layer 3 device. +
+c. Each VLAN usually uses a separate address space. +
+d. VLANs cannot span multiple switches.
+
+19. How do you configure a trunk on a router’s interface that will have connections to more than one VLAN?
+a. Use subinterfaces on a physical interface, for each VLAN. +
+b. Use the switchport mode trunk command.
+c. You do not need to explicitly configure a trunk on an interface.
+d. Use the no switchport command.
+
+20. You have configured a switch to perform Layer 3 routing via an SVI and have assigned that interface to VLAN 20. To check the status of the SVI, you issue the show interfaces vlan 20 command. You see from the output display that the interface is in an up/up state. Among others, what must be true in an SVI configuration to bring the VLAN and line protocol up?
+a. The port must be physically connected to another Layer 3 device.
+b. At least one port in VLAN 20 must be active. +
+c. Because this is a virtual interface, the operationalstatus will always be in an up/up state.
+d. All of these answers are correct.
+
+21. While configuring SVIs on a multilayer switch, when must you use the ip routing command?
+a. When using an SVI to provide IP connectivity to the switch itself for a given VLAN.
+b. When configuring the SVI as part of a Layer 2 EtherChannel bundle.
+c. When using an SVI to provide Layer 3 IP forwarding services to its assigned VLAN. +
+d. Never, because IP routing is enabled by default on a multilayer switch.
+
+22. True or False: In Layer 3 EtherChannel two links were bundled. On each of the two switches, there are two IP addresses configured. 
+TRUE
+FALSE +
+
+
+UNIT 6
+1. Which command enables HSRP on a Cisco IOS device?
+a. standby virtual ip 10.1.1.1
+b. standby ip 10.1.1.1 group 1
+c. hsrp 1 ip 10.1.1.1
+d. standby 1 ip 10.1.1.1 +
+
+2. Which HSRP group uses the MAC address 0000.0c07.ac01?
+a. Group 0
+b. Group 7
+c. Group 11
+d. Group 1 +
+
+3. If you have four routers enabled for the same HSRP group, how many of them will be in standby state?
+a. 0
+b. 1
+c. 2
+d. All, except the active router +
+
+4. Which VRRP group uses the MAC address 0000.5e00.01ff?
+a. Group 0
+b. Group 1
+c. Group 255 +
+d. Group 94
+
+5. What is the primary difference between VRRP and HSRP?
+a. HSRP is a standard protocol, whereas VRRP is Cisco proprietary.
+b. VRRP is a standard protocol, whereas HSRP is Cisco proprietary. +
+c. HSRP is configured at the global level, whereas VRRP is configured at the interface level.
+d. VRRP offers Layer 2 first-hop redundancy, whereas HSRP offers Layer 3 first-hop
+redundancy.
+
+6. Which IP address should a client PC use as its default gateway if you have the following
+configuration on a multilayer switch?
+interface ethernet 0/1
+no switchport
+ip address 192.168.199.3 255.255.255.0
+vrrp 1 ip address 192.168.199.2
+a. 192.168.199.1
+b. 192.168.199.2 +
+c. 192.168.199.3
+d. Any of the above
+
+7. By default, which MAC address will be sent to the next client that is asking for the GLBP virtual
+gateway?
+a. 0007.a400.0102
+b. Next virtual MAC in sequence +
+c. Virtual MAC of the least-used router
+d. Virtual MAC address of HSRP
+
+8. At a maximum, how many active virtual forwarders can be there within a GLBP group?
+a. 1
+b. 2
+c. 4 +
+d. 8
+
+9. Which of the following best describes the GLBP standby virtual gateway state?
+a. The virtual IP address has not been configured or learned, but there is some GLBP
+configuration.
+b. The virtual IP address has been configured or learned, but configuration is not complete. The
+interface must be operational on Layer 3 and configured to route IP.
+c. The virtual gateway is receiving hello packets. It is ready to change to speak state if the active or standby virtual gateway becomes unavailable. +
+d. The virtual gateway is trying to become the active or standby virtual gateway.
+e. This gateway is next in line to be the active virtual gateway.
+
+
+
+
+
+
+
+
+UNIT 7
+1. Which of the following statements are true? (Choose two.)
+a. Stratum 1 devices have directly attached radio or atomic clock. +
+b. A higher stratum number always indicates greater quality and reliability.
+c. The stratum number represents the distance from a reference clock. +
+d. Network will always synchronize with NTP server with the highest stratum number.
+
+2. Which of the following SNMP statements are true? (Choose two.)
+a. Given SNMP write access, a device can be remotely reconfigured via SNMP. +
+b. Network management systems (NMSs) include their own SNMP agent.
+c. The snmp-ifindex persist command exposes interface counters over SNMP.
+d. SNMP traps are sent from the SNMP agent to the SNMP manager and are event based. +
+
+3. Which of the following SNMP recommendations is not valid?
+a. Always use MD5 authentication when SNMPv3 is not available and you are forced to use SNMPv2c. +
+b. Restrict access to read-only.
+c. Set up views to restrict manager to only access needed set of MIBs.
+d. Use ACLs to restrict SNMP access only to known managers.
+
+4. What is the role of the switch in a AAA architecture?
+a. Authentication server
+b. Supplicant
+c. Authenticator +
+d. RADIUS entry point
+
+5. The users in a department are using a variety of host platforms, some old and some new. All of them have been approved with a user ID in a RADIUS server database. Which one of these features should be used to restrict access to the switch ports in the building?
+a. AAA authentication
+b. AAA accounting
+c. AAA authorization
+d. 802.1D
+e. 802.1X +
+f. Port security
+
+6. What is the aim of the “sticky” option when used with port security?
+a. A learned MAC address must stick to one single port.
+b. A dynamically learned MAC address is considered like a statically learned MAC address. +
+c. For a given MAC address with the sticky option, the port security feature applies to whichever port the MAC address connects to.
+d. A router on a stick can bypass the port security feature.
+
+7. At which layer should port security be implemented?
+a. Access layer +
+b. Distribution layer
+c. Core layer
+d. All of the above
+
+8. Match each AAA feature to its definition.
+
+
+Authentication matches with “Identifies a user before allowing access to a protected resource.”
+Authorization matches with “Controls the level of access users have.”
+Accounting matches with “Collects information about the user’s activity.”
+
+9. With authorization, what defines user capabilities?
+a. Source IP address
+b. Login encryption keys
+c. Attribute-value pair +
+d. All of the above
+
+10. Leveraging AAA provides which of the following benefits to access control? (Select all that apply.)
+a. Flexibility
+b. Scalability
+c. Standardized Approach
+d. Redundancy
+e. All of the above +
+
+11. Which of the following statements are true? (Choose two.)
+a. TACACS+ and RADIUS are industry standard protocols.
+b. TACACS+ differs from RADIUS in that it splits all three AAA functions separately. +
+c. TACACS+ encrypts the entire packet and supports bidirectional challenge responses. +
+d. RADIUS encrypts the entire packet, but only supports unidirectional challenge responses.
+
+12. Identity-based networks such as implemented in 802.1X allow for which of the following behaviors in the network? (Select all that apply.)
+a. Network access based on user authentication
+b. Mobility
+c. Placement of user into a VLAN based on identity
+d. Security
+e. All of the above +
+
+13. Match SNMP versions with their descriptions.
+
+
+SNMPv1 = Initial version, rarely used 
+SNMPv2 = added a complex security model 
+SNMPv2c = community based de-facto standard 
+SNMPv3 = supports authentication and encryption and should be used
+
+
+14. Different NTP restrictions can be configured through a combination of ACLs applying different modes of operation on Cisco devices. Match the restriction keyword with the restriction it applies.
+
+
+
+Peer = time synchronization requests and control
+query-only = only allows control quesries
+Serve = time synchronization requests and control
+Serve-only = only allows sync requests
+
+15. With time synchronization, what term describes whether a learned time is to be trusted?
+a. Authoritative +
+b. Authenticated
+c. Stratum
+d. Associated
+
+16. From the following list, what are the most authoritative sources for NTP? (Choose three.)
+a. An NTP server sourcing time from GPS +
+b. An NTP server sourcing time from an NTP distribution switch
+c. An NTP server sourcing time from a radio clock +
+d. An NTP server sourcing time from an atomic clock +
+e. None of the above
+
+17. What concept does NTP use to keep accuracy of time when synchronizing time in a network?
+a. NTP time shifting
+b. Stratum +
+c. Bidirectional peering
+d. Full-mesh broadcasting
+e. None of the above
+
+18. What level accuracy is generally achieved with NTP in a LAN environment?
+a. Seconds
+b. Milliseconds +
+c. Microseconds
+d. Tens of seconds
+
+19. What level accuracy is generally achieved with PTP in LAN environment?
+a. Seconds
+b. Milliseconds
+c. Microseconds +
+d. Tens of seconds
+
+
+UNIT 8
+1. Which of the following statements are true about LLDP?
+a. It is an industry standard protocol. +
+b. It runs at the data link layer. +
+c. When the LLDP feature is enabled, the switch will forward all received LLDP frames on all ports except the port the frame was received.
+d. To verify neighbors, use the show cdp neighbors command.
+
+2. Which of the following statements is true about both CDP and LLDP?
+a. When a switch receives a CDP frame, it forwards it out to all other ports on the switch.
+b. Older-generation switches may support CDP and not LLDP because LLDP was ratified as a standard long after CDP was supported on Cisco devices. +
+c. CDP nor LLDP pose any type of security risk and should be enabled everywhere for ease of us.
+d. CDP and LLDP may be enabled at the same time and can share information between each
+other.
+
+3. LLDP is defined as which of the following standards?
+a. 802.1ac
+b. 802.1ab +
+c. 802.1X
+d. 802.1c
+
+4. What type of information may LLDP send out? (Choose more than one answer)
+a. Hostname
+b. IP address
+c. Software version
+d. Device capabilities
+e. Performance data from an MIB
+f. All of the above +
+
+5. What types of frames do CDP and LLDP use?
+a. Layer 2 unicast
+b. Layer 2 multicast +
+c. Layer 3 unicast
+d. Layer 3 multicast
+
+6. What is the global command to enable LLDP on a Cisco Catalyst switch?
+a. CDP enable
+b. LLDP run +
+c. LLDP enable
+d. Feature LLDP
+
+7. Which of the following statements is true regarding UDLD? (Hint: There is only one correct answer, although at first read you might believe there are two correct answers.)
+a. UDLD detects physical one-way links for fiber pairs connected only on one end.
+b. UDLD, by default, will disable links it detects as unidirectional.
+c. UDLD detects unidirectional behavior on links that are link up but not passing traffic in one direction. +
+d. UDLD is enabled by default on all copper ports.
+
+8. UDLD aids in detection of which of the following types of anomalous conditions? (Choose more than one.)
+a. Transient hardware condition +
+b. Hardware failure +
+c. Optic/GBIC failure +
+d. Expired frame TTL
+e. Miswired copper cabling +
+f. Software defect or condition +
+g. Misconfigured or malfunctioning of a sniffer
+h. Routing loops
+
+9. True or False? UDLD in normal mode will detect and shut down a unidirectional link in about 60 seconds. UDLD aggressive mode will detect the link in a shorter time and attempt to reestablish the link every 8 seconds. 
+TRUE
+FALSE +
+
+10. Which two statements are true about the IEEE 802.3at standard?
+a. It can provide your powered devices with more than 15 W of power. +
+b. It is not backward compatible with 802.3af.
+c. It is an improvement over the 802.3af standard. +
+d. It is a method that was developed by Cisco.
+
+11. Which two statements are true about the PoE negotiation process?
+a. The PoE switch keeps the power on a disabled port up, just in case a device that needs PoE will be connected.
+b. With 802.3af and 802.3at, the switch tries to detect the powered device by supplying a small voltage across the Ethernet cable. +
+c. IEEE 802.3af power classes are numbered from 0 to 4.
+d. Cisco Inline Power has the same method of negotiating power as both of the IEEE standards. +
+
+12. Which of the following are reasons for leveraging PoE in a campus network?
+a. Support for remote power management
+b. Centralized method of backup power
+c. Simplified configuration
+d. Re-use existing cabling infrastructure
+e. All of the above +
+
+13. Which of the following statements best describes SDM templates?
+a. SDM templates are useful for applying a standard configuration on initial boot.
+b. SDM templates define a basic management configuration.
+c. SDM templates are pre-defined templates used to configure scarce hardware resources of a Catalyst switch for optimal use in specific environments. +
+d. SDM templates are necessary port layout configurations.
+
+14. Which of the following statements is true about SDM templates?
+a. All Catalyst switches support SDM templates.
+b. The resources that SDM templates manage are exactly the same on all Catalyst switches.
+c. Although only the low to mid-range campus network switches support SDM templates, all Catalyst switches support mechanisms to manage scarce hardware resources. +
+d. SDM templates are not persistent on reboot of the Catalyst switch.
+
+15. Which of the following are examples of SDM template use cases? (Choose multiple answers.)
+a. Default, the standard template optimized for broad set of use cases +
+b. VLAN, the template optimized for large-scale Layer 2 designs with large number of MAC addresses +
+c. PoE optimized template to ensure power to phones
+d. Routing, the template optimized for routing +
+e. Access, the template optimized for large number of VLANs +
+f. Dual-stack IPv4 and IPv6 +
+
+16. Why is the SPAN feature necessary on today’s switches?
+a. Switches do not flood traffic on all ports, they switch traffic based on destination MAC address. +
+b. Switches flood data traffic on all ports, overloading probes and traffic sniffers.
+c. Switches flood control traffic on all ports, overloading probes and traffic sniffers.
+
+17. Which of the following are uses of SPAN and RSPAN?
+a. Troubleshooting a networking problem
+b. Network traffic analytics
+c. Congestion control
+d. Policy enforcement
+e. A, B, and C
+f. A and B +
+g. All of the above
+
+18. Which of the following RSPAN statements are true? (Choose three.)
+a. RSPAN requires a dedicated RSPAN VLAN. +
+b. RSPAN supports source and destination ports on different switches. +
+c. RSPAN sessions require inter-VLAN routing
+d. A reflector port forwards all traffic to connected device.
+e. Switches may need to be configured on the interconnecting trunk port with the RSPAN VLAN. +
+
+19. What responder device from the following list provides the most accuracy for IP SLA?
+a. Cisco IOS router
+b. Cisco IOS switch
+c. Cisco Nexus switch
+d. PC or server
+e. Cisco IOS Software with IP SLA responder +
+
+20. Which statement about an IP SLA responder is true?
+a. The responder can respond to multiple IP SLA measurement operations that try to connect to the same port number. +
+b. IP SLA operation with responder has two phases: control and management.
+c. IP SLA source and responder communicate over TCP.
+d. All IP SLA tests will work only if IP SLA responder is used.
+
+21. Which of the following IP SLA statements are true? (Choose two.)
+a. IP SLA guarantees the service level of a network link.
+b. Results of the IP SLA tests can be polled from device using SNMP. +
+c. An IP SLA responder can improve the accuracy of the test by subtracting the time spent to process a packet on the destination device. +
+d. Under no condition can IP SLA measurement take into account the processing delay of an IP SLA test.
+
+UNIT 9
+1. Which of the following routing protocols is not supported as part of NSF?
+a. BGP
+b. OSPF
+c. IS-IS
+d. EIGRP
+e. RIP +
+
+2. What is the expected failover time for SSO mode for Layer 2 switching on the Catalyst 4500
+family of switches?
+a. 2 to 4 minutes
+b. 30 to 60 seconds
+c. Less than 3 seconds
+d. Subsecond +
+e. None of the above
+
+3. Match switch virtualization terms with their descriptions.
+a. StackWise
+b. Virtualswitch link (VSL)
+c. Virtual Switching System (VSS)
+d. StackWise interconnect cable
+1. Joins up to 9 individualswitches in a single logicalswitching unit.
+2. Network system virtualization technology that pools two multichassis switches into one
+virtualswitch.
+3. Connects switches to create a bidirectional closed-loop path.
+4. Carries regular data traffic in addition to the control plane communication between the two virtualswitch members. It consists of multiple 10 Gigabit Ethernet connections bundled in an EtherChannel.
+
+a. StackWise - 1. Joins up to 9 individualswitches in a single logicalswitching unit.
+b. Virtualswitch link (VSL) - 4. Carries regular data traffic in addition to the control plane communication between the two virtualswitch members. It consists of multiple 10 Gigabit Ethernet connections bundled in an
+EtherChannel
+c. c. Virtual Switching System (VSS) - 2. Network system virtualization technology that pools two multichassis switches into one
+virtualswitch.
+d. StackWise interconnect cable - 3. Connects switches to create a bidirectional closed-loop path.
+
+4. Which of the following is not a technology used to join Cisco switches in a stack?
+a. StackWise
+b. StackWise Plus
+c. StackWise-480
+d. StackPower +
+e. FlexStack
+
+
+
+UNIT 10
+1. Which feature that is supported on Cisco switches restricts a switch port to a specific set or number of MAC addresses?
+a. DHCP snooping
+b. Private VLANs
+c. Access lists
+d. VACLs
+e. Port security +
+f. None of the above
+
+2. The storm control feature controls which type of traffic?
+a. Unicast
+b. Multicast
+c. Broadcast
+d. None of the above
+e. Not enough information provided on modelswitch and software version under consideration, but generally storm controlsupports unicast, multicast, and broadcast. +
+
+3. With DHCP snooping, which port is configured as trusted?
+a. The port to the DHCP client is always trusted.
+b. The port to the DHCP server is always trusted. +
+c. With DHCP snooping, all ports are trusted. 
+d. Trust ports have no context in DHCP snooping. 
+e. Any port to the client and to the server can become trusted as soon as a DHCP transaction is secured.
+f. A and B
+
+4. Which two of the following does a switch use to detect spoofed addresses when IP Source Guard
+is enabled?
+a. ARP entries
+b. DHCP database
+c. DHCP snooping database +
+d. Static IP source binding entries +
+e. Reverse path-forwarding entries
+f. VACLs
+
+5. By default, Cisco IOS switch ports are put in one of the two DTP modes. Which two?
+a. Dynamic desirable +
+b. Access
+c. Dynamic auto +
+d. Off
+e. Non-negotiate
+f. Trunk
+
+6. What is the aim of the “sticky” option when used with port security?
+a. A learned MAC address must stick to one single port.
+b. A dynamically learned MAC address is considered like a statically learned MAC address. +
+c. For a given MAC address with the sticky option, the port security feature applies to whichever
+port the MAC address connects to.
+d. A router on a stick can bypass the port security feature.
+
+7. At which layer should port security be implemented?
+a. Access layer +
+b. Distribution layer
+c. Core layer
+d. All of the above
+
+8. Which statements about VLAN hopping are correct? (Choose two.)
+a. A Catalyst switch discards VLAN tagged packets ingressing an access port. +
+b. A Catalyst switch accepts VLAN-tagged packets ingressing an access port if VLAN tag
+matches the VLAN of the access port.
+c. A VLAN hopping attack with double tagging is possible only when attacker’s access port is in the same VLAN as the native VLAN of a trunk port. +
+d. A VLAN hopping attack with double tagging is bidirectional; traffic can hop from the attacker’s VLAN to the target VLAN and vice versa.
+e. Native VLAN pruning disables maintenance protocols, such as CDP and DTP.
+
+9. There are two types of secondary private VLANs. Which two?
+a. Promiscuous
+b. Primary
+c. Transparent
+d. Isolated +
+e. Community +
+f. RSPAN
+
+10. Which statements about PVLAN promiscuous mode are correct? (Choose two.)
+a. Promiscuous ports can be mapped to a single primary VLAN. +
+b. Promiscuous ports can be mapped to multiple primary VLANs.
+c. Promiscuous ports can always communicate with all ports in the same primary VLAN. +
+d. Promiscuous ports can only communicate with ports in the second VLAN it is mapped to.
+e. Promiscuous ports do not participate in spanning tree.
+
+11. Which of the following reasons describes why configuring campus network security is so
+important?
+a. Current-generation campus network switches’ default mode of operation is to allow all traffic through the network.
+b. Hackers may gain physical access to the campus network to launch attacks.
+c. Viruses may effect corporate laptops at home and then cause havoc when connected at the office.
+d. Bring your own devices (BYOD) is common in today’s workplace and these devices are more easily compromised because security of the device is placed mostly in the hands of the owner and not corporate IT.
+e. The emergence of public and private clouds creates even more opportunity for hackers to gain malicious access to the network.
+f. All of the above +
+g. None of the above
+
+12. Which of the following statements are generally true about firewalls, routers, and switches?
+(Choose two.)
+a. Firewalls come preconfigured to deny all traffic, and specific traffic must be permitted. +
+b. Routers and switches come preconfigured to deny all traffic, and specific traffic must be
+permitted.
+c. Routers and switches come preconfigured to allow all traffic, and specific traffic must be
+denied. +
+d. Firewalls come preconfigured to allow all traffic, and specific traffic must be denied
+
+13. With MAC flooding attacks, what are the two possible malicious outcomes?
+a. Switch resource overflows, such as the MAC address table, which may result in traffic loss. +
+b. The switch detecting MAC flooding and shutting down all ports by default.
+c. The switch signaling the DHCP server not to give out new DHCP addresses.
+d. The switch flooding traffic, which may result in an intruding device intercepting traffic. +
+
+14. Which statement describes the err-disabled state on a switch?
+a. The err-disabled state of a port is the default state of a port during initial configuration.
+b. The err-disabled state of a port is when the port is up but nothing is connected.
+c. The err-disabled state of a port describes a condition when the switch has disabled the port due to an error condition to prevent any further issues on the network. +
+d. The err-disabled state of a port describes the condition when the spanning-tree state is not forwarding.
+
+15. Which of the following conditions will a switch place a port into an err-disabled state? (Choose all that apply.)
+a. Duplex mismatch +
+b. UDLD condition +
+c. Spanning-tree BPDU Guard +
+d. Spanning-tree UplinkFast
+e. HSRP duplicate MAC
+f. Excessive link flapping +
+g. Port security Violation +
+
+16. What is the difference between a PACL and an ACL?
+a. ACLs are applied to ports, whereas PACLs are applied to physical interfaces on routers.
+b. ACLs and PACLs are the same feature, just applied to different types of interfaces.
+c. ACLs are used for Layer 3 interfaces, whereas PACLs are used for Layer 2 interfaces. +
+
+17. If the failing threshold for storm control is not set, what is the default value used for the failing threshold.
+a. 50 percent of the total bandwidth
+b. 50 percent of the rising threshold
+c. 0 packets per second
+d. 100 percent of the rising threshold +
+
+18. What is the purpose of DHCP option 82?
+a. DHCP option 82 provides information that allows the host to request a static IP address
+assignment.
+b. DHCP option 82 allows the use of virtual machines on the attach host, such as VMWare ESX.
+c. DHCP provides additional information in the DHCP request to inform the DHCP server of additionalspecifics about the locality and details about the DHCP request. +
+d. DHCP option 82 is a required feature for IPv6.
+e. All of the above
+f. None of the above
+
+19. Which statement best describes how IP Source Guard works?
+a. IP Source Guard works by building dynamic PACVLs and VACLs by leveraging DHCP snooping to ensure that the frames entering the switch port are only from an IP address assigned by a trusted DHCP server. +
+b. IP Source Guard works by building dynamic PACLs and VACLs by leveraging the ARP table to
+ensure the frames entering the switch port are only from a valid IP address.
+c. IP Source Guard works by building dynamic PACVLs VACLs by leveraging the preconfigured
+ACLs to ensure that the frames entering the switch port are only from a valid IP address.
+d. IP Source Guard works by directly acting as a DHCP server.
+e. None of the above
+
+20. Which statement describes ARP spoofing?
+a. ARP spoofing is when a host assumes the IP address of a legitimate host in the network.
+b. ARP spoofing attacks networks by spoofing an ARP reply from a legitimate device with an invalid MAC address. +
+c. ARP spoofing works by flooding a bogus ARP request at the next-hop router in a DoS attempt.
+d. None of the above
+
+21. Which statement best describes how dynamic ARP inspection (DAI) works?
+a. DAI uses the ARP table of the first-hop router to ensure only valid ARP enter the network.
+b. DAI leverages custom, statically configured ACLs to ensure that only ARPs from valid MAC addresses enter the switch.
+c. DAI uses LLDP to communicate with the attach host to put an authoritative MAC table.
+d. DAI prevents attacks by filtering ARP requests that are not valid by referencing the MAC-toIP address bindings built from DHCP snooping. +
+
+22. What is the main difference between ACLs on Cisco routers and VACLs on Cisco Catalyst switches?
+a. Router ACLs can provide access control for routed and bridged frames in the VLAN, and
+switch VACLs can access control only bridged frames.
+b. Router ACLs can provide access control for routed frames across VLANs, and switch VACLs
+can access control only bridged frames in a VLAN. +
+c. Router ACLs can provide access control for routed frame
+d. Both router ACLs and switch VACLs provide the same function.
+e. None of the above
+
+23. What are five best practices recommendations associated with securing VLAN trunks?
+a. Restrict MAC addresses on VLAN trunks
+b. Configure all trunks as DHCP snooping untrusted
+c. Manually configure all host ports as access ports instead of dynamic modes of DTP
+d. Restrict VLANs on trunk ports to necessary VLANs
+e. Do not use valid native VLANs on trunk ports
+f. Configure all trunks ports statically
+g. Shut down all unused interfaces
+
+. C, D, E, F, G
+
+24. Match each port type to its definition.
+
+
+A-1 B-3 C-4 D-5 E-2
+
+25. Put the ACLs in order of operation (1–5 or not applied) for an incoming routed packet through the switch.
+a. Egress VLAN ACL
+b. Egress SVI standard ACL
+c. Ingress port ACL
+d. Ingress SVI standard ACL
+e. Ingress VLAN ACL
+f. Egress port ACL
+
+a. 5 b. 4 c. 1 d. 3 e. 2 
+f. not applied 
+
